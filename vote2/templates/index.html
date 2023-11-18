@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- to use the socket io in JS you have to add this-->
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script src = "{{ url_for('static' , filename ='index.js')}}"></script>
+    <title>Voter</title>
+</head>
+<body>
+    <div>Yes Votes: <span id ="yes">{{votes["yes"]}}</span></div>
+    <div>NO Votes: <span id ="no">{{votes["no"]}}</span></div>
+    <div>Maybe Votes: <span id ="maybe">{{votes["maybe"]}}</span></div>
+    <hr>
+    <button data-vote="yes">YES</button>
+    <button data-vote="no">NO</button>
+    <button data-vote="maybe">Maybe</button>
+</body>
+</html>
