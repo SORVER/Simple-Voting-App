@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- to use the socket io in JS you have to add this-->
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <script src = "{{ url_for('static' , filename ='index.js')}}"></script>
+    <style>
+
+    #maybe-container {
+      width:33%;
+      height: 100px; /* Set the height of the yellow rectangle */
+      background-color: yellow; /* Set the background color to yellow */
+      border: 2px solid black; /* Add a black border around the yellow rectangle */
+      
+    }
+
+    /* Define a class for the red rectangle */
+    #no-container {
+      width: 33%; /* Set the width of the red rectangle to 30% */
+      height: 100px; /* Set the height of the red rectangle */
+      background-color: red; /* Set the background color to red */
+      border: 2px solid black; /* Add a black border around the red rectangle */
+
+       order: 1;
+      
+    }
+
+    /* Define a class for the green rectangle */
+    #yes-container {
+      width: 33%; /* Set the width of the green rectangle to 20% */
+      height: 100px; /* Set the height of the green rectangle */
+      background-color: green; /* Set the background color to green */
+      border: 2px solid black; /* Add a black border around the green rectangle */
+       order: -1;
+    }
+
+    /* Create a container to hold all rectangles */
+    #all-container {
+        width : 100%;
+      display: flex; /* Use flexbox for layout */
+    }
+    </style>
+    <title>Voter</title>
+</head>
+<body>
+    <div id="all-container">
+        <!-- Red Rectangle -->
+        <div id="yes-container"></div>
+        <div id="no-container"></div>
+        <!-- Yellow Rectangle -->
+        <div id="maybe-container"></div>
+        <!-- Green Rectangle -->
+        
+
+
+      </div>
+    <hr>
+    <button data-vote="yes">YES</button>
+    <button data-vote="no">NO</button>
+    <button data-vote="maybe">Maybe</button>
+    <ul>
+        <li>no: red</li>
+        <li>yes: green</li>
+        <li>maybe: yellow</li>
+    </ul>
+</body>
+</html>
